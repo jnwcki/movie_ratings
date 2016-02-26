@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from movieratings.views import make_index
+from movieratings.views import make_index, movie_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', make_index)
+    url(r'^$', make_index, name='index'),
+    url(r'(^\d+$)', movie_view, name="selected_movie")
+
 
 ]
