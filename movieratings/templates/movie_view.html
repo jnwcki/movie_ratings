@@ -60,9 +60,15 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<br>{{ movie.title }}
-<br>{{ movie.release_date }}
-<!--
+<br><h1>{{ movie.title }}</h1>
+<br>Release Date: {{ movie.release_date }}
+<br>Average Rating: {{ avg_ratings }}
+<br>{{ count }} Individual Ratings:
+{% for rating in ratings %}
+<h3>{{ rating }}</h3>
+{% endfor %}
+
+    <!--
     <br>{% if movie.video_release_date  %}
     Release Date:
     {{ movie.video_release_date }}
