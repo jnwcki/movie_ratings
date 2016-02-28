@@ -65,7 +65,13 @@
 <br>Average Rating: {{ avg_ratings }}
 <br>{{ count }} Individual Ratings:
 {% for rating in ratings %}
-<h3>{{ rating }}</h3>
+<div class="panel panel-default">
+<div class="panel-body">
+    <a href="rater/{{ rating.user_id }}">Rater</a>
+    <h3>Rating: {{ rating }}</h3>
+</div>
+</div>
+
 {% endfor %}
 
     <!--

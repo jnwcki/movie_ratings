@@ -41,7 +41,8 @@ class User(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     zip_code = models.CharField(max_length=10)
 
-
+    def __str__(self):
+        return "{} {} {}".format(self.age, self.gender, self.zip_code)
 
 class Rating(models.Model):
     user = models.ForeignKey(User)
