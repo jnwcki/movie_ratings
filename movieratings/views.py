@@ -7,15 +7,10 @@ from movieratings.models import Movie, Rating, User
 
 def make_index(request):
     m_search = request.POST.get('movie_search')
-    results = ''
+    results = []
     print("inside make_index", m_search)
     if m_search:
         results = Movie.objects.filter(title__contains=m_search)
-        print("inside m_search function", request.POST.get('movie_search'))
-        print(results)
-    else:
-        #Rating.objects.all().aggregate(Avg(rating))
-        pass
     return render(request, 'index.html', {"movies": results})
 
 

@@ -40,6 +40,8 @@ class User(models.Model):
     age = models.IntegerField()
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     zip_code = models.CharField(max_length=10)
+    occupation = models.CharField(max_length=100, null=True)
+
 
     def __str__(self):
         return "{} {} {}".format(self.age, self.gender, self.zip_code)
