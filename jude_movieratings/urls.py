@@ -21,8 +21,8 @@ from movieratings.views import make_index, movie_view, user_view
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', make_index, name='index'),
-    url(r'(^\d+$)', movie_view, name="selected_movie"),
-    url(r'(rater/\d+)', user_view, name="user_page")
+    url(r'movie/(\d+$)', movie_view, name="selected_movie"),
+    url(r'rater/(\d+)', user_view, name="user_page")
 
 
 ]

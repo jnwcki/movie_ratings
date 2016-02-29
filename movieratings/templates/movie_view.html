@@ -8,7 +8,7 @@
 {% for rating in ratings %}
 <div class="panel panel-default">
 <div class="panel-body">
-    <a href="rater/{{ rating.user_id }}">Rater</a>
+    <a href="/rater/{{ rating.user_id }}">Rater {{ rating.user_id }}</a>
     <h3>Rating: {{ rating }}</h3>
 </div>
 </div>

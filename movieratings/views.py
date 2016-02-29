@@ -32,7 +32,7 @@ def movie_view(request, captured_id):
 
 
 def user_view(request, captured_id):
-    rater_id = captured_id[6:]
+    rater_id = captured_id
     rater_base = User.objects.get(id=rater_id)
     all_ratings = Rating.objects.filter(user=rater_id)
 

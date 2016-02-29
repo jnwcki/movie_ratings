@@ -7,7 +7,7 @@
 <br>{{ rater_info.zip_code }}
 <br>
     {% for movie in all_ratings %}
-<div><h4>Title: <a href="{{ movie.movie.id }}">{{ movie.movie.title }}</a> Rating: {{ movie.rating }}</h4></div>
+<div><h4>Title: <a href="/movie/{{ movie.movie.id }}">{{ movie.movie.title }} </a>Rating: {{ movie.rating }}</h4></div>
 
 {% endfor %}
 {% endblock content %}
