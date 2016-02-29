@@ -5,7 +5,7 @@ from django.db.models import Avg
 from movieratings.models import Movie, Rating, User
 
 
-def make_index(request):
+def make_index(request, *args):
     m_search = request.POST.get('movie_search')
     results = []
     print("inside make_index", m_search)
