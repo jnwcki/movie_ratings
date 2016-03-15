@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block searchform %}{% endblock %}
+
 {% block content %}
 <br><h3>Movie Rater Number: {{ rater_info.id }}</h3>
 <br>Gender: {{ rater_info.get_gender_display }}

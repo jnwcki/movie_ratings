@@ -41,3 +41,4 @@ def user_view(request, captured_id):
                                               'all_ratings': all_ratings,
                                               }
                   )
+

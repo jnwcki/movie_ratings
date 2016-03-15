@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block searchform %}{% endblock %}
+
 {% block content %}
 <br><h1><a href="{{ movie.imdb_url }}">{{ movie.title }}</a></h1>
 <br>Release Date: {{ movie.release_date }}
