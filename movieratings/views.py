@@ -1,7 +1,11 @@
+import json
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.db.models import Avg, Count
 
 # Create your views here.
+from django.views.generic import View
+
 from movieratings.models import Movie, Rating, User
 
 
@@ -41,4 +45,23 @@ def user_view(request, captured_id):
                                               'all_ratings': all_ratings,
                                               }
                   )
+
+
+class MovieListApiView(View):
+    def get(self, request):
+        data = list(Movie.objects.all().values())
+        return HttpResponse(json.dumps(data), content_type="application/json")
+
+
+class RatingListApiView(View):
+    def get(self, request):
+        data = list(Rating.objects.all().values())
+        return HttpResponse(json.dumps(data), content_type="application/json")
+
+
+
+class UserListApiView(View):
+    def get(self, request):
+        data = list(User.objects.all().values())
+        return HttpResponse(json.dumps(data), content_type="application/json")
 

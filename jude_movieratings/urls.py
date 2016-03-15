@@ -16,14 +16,18 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from movieratings.views import make_index, movie_view, user_view, top_twty
+from movieratings.views import make_index, movie_view, user_view, top_twty, \
+    MovieListApiView, UserListApiView, RatingListApiView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', make_index, name='index'),
     url(r'movie/(\d+$)', movie_view, name="selected_movie"),
     url(r'rater/(\d+)', user_view, name="user_page"),
-    url(r'top/', top_twty, name="top_twty")
+    url(r'top/', top_twty, name="top_twty"),
+    url(r'api/movies/$', MovieListApiView.as_view(), name='api_movie'),
+    url(r'api/users/$', UserListApiView.as_view(), name='api_user'),
+    url(r'api/ratings/$', RatingListApiView.as_view(), name='api_rating')
 
 
 ]
